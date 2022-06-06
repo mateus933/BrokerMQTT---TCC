@@ -110,11 +110,11 @@ try:
                   print(" ------- Fim de Dados -------\n")
                   i = i + 1 #1000 Mensagens       
            
-            elif(temperatura > 25): #Temparatura Normal se maior ou igual a 20 C ou menor igual a 25 C
+            elif(temperatura > 25): #Temparatura Quente se maior que 25 C
                   GPIO.output(VERMELHO,1) #Ascede LED Vermelho
                   print("\n ------- Dados Obtidos -------")
                   print("Horario: {} \n".format(horario_rasp)) #Imprime no Shell o horario da leitura
-                  print("Temperatura Normal: {} C Umidade relativa do ar: {} Horario: {}".format(temperatura, umidade, horario_rasp)) #Imprime os dados coletados pelo sensor e o horario
+                  print("Temperatura Quente: {} C Umidade relativa do ar: {} Horario: {}".format(temperatura, umidade, horario_rasp)) #Imprime os dados coletados pelo sensor e o horario
                   MSG = ' "Horario_rasp": "{}","Sensor":"{:s}", "Temperatura Quente": "{}", "Umidade relativa do ar": "{}" '.format(horario_rasp, sensor_id, temperatura, umidade)#Mensagem que sera enviada
                   MSG = '{'+MSG+'}'
                   print(MSG) #Imprime a mensagem do servidor
